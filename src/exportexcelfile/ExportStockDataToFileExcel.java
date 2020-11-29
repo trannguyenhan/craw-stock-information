@@ -20,8 +20,8 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  *
  * @author admin
  */
-public class ExportStockDaTaToFileExcel {
-    CrawlerDaTaHOSE crawHOSE = new CrawlerDaTaHOSE("https://s.cafef.vn/TraCuuLichSu2/1/HOSE/03/06/2020.chn");
+public class ExportStockDataToFileExcel {
+    CrawlerDataHOSE crawHOSE = new CrawlerDataHOSE("https://s.cafef.vn/TraCuuLichSu2/1/HOSE/03/06/2020.chn");
     XSSFWorkbook wb = new XSSFWorkbook();
     
     public void exportDaTaHOSE() throws IOException
@@ -114,7 +114,7 @@ public class ExportStockDaTaToFileExcel {
     
     public void export() throws FileNotFoundException, IOException
     {
-        File file = new File("E:\\[JAVA]NetBeans\\CrawlerDaTaWebsite\\hose.xlsx");
+        File file = new File("result/hose.xlsx");
         FileOutputStream fileoutput = new FileOutputStream(file);
         wb.write(fileoutput);
     }

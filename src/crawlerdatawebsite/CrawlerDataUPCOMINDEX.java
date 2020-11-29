@@ -16,9 +16,9 @@ import org.jsoup.nodes.Element;
  *
  * @author admin
  */
-public class CrawlerDaTaHNXINDEX extends CrawlerDaTaWebsite{
+public class CrawlerDataUPCOMINDEX extends CrawlerDataWebsite{
     
-    public CrawlerDaTaHNXINDEX(String url)
+    public CrawlerDataUPCOMINDEX(String url)
     {
         super(url);
     }
@@ -43,10 +43,9 @@ public class CrawlerDaTaHNXINDEX extends CrawlerDaTaWebsite{
                 String strGTAuction = eleTR.getElementsByClass("Item_Price1").get(2).text();
                 String strKLDeal = eleTR.getElementsByClass("Item_Price1").get(3).text();
                 String strGTDeal = eleTR.getElementsByClass("LastItem_Price").text();
-                //String strOpenPrice = eleTR.getElementsByClass("Item_Price1").get(4).text(); Tại san HNX-INDEX khong co OpenPrice
-                String strOpenPrice = "NULL";
-                String strMaxPrice = eleTR.getElementsByClass("Item_Price1").get(4).text();
-                String strMinPrice = eleTR.getElementsByClass("Item_Price1").get(5).text();
+                String strOpenPrice = eleTR.getElementsByClass("Item_Price1").get(4).text();
+                String strMaxPrice = eleTR.getElementsByClass("Item_Price1").get(5).text();
+                String strMinPrice = eleTR.getElementsByClass("Item_Price1").get(6).text();
 
                 DSChiSo tempchiso = new DSChiSo(strDate, strFinalPrice, strChange, strKLAuction, strGTAuction, strKLDeal, strGTDeal, strOpenPrice, strMaxPrice, strMinPrice);
                 dschiso.add(tempchiso);
@@ -57,4 +56,5 @@ public class CrawlerDaTaHNXINDEX extends CrawlerDaTaWebsite{
             // Khi khong con du lieu de doc -> co 1 ngoai le xay ra, ket thuc va thoat khoi vong lap
         }
     }
+    
 }

@@ -15,7 +15,7 @@ import org.jsoup.nodes.Document;
  *
  * @author admin
  */
-public abstract class CrawlerDaTaWebsite {
+public abstract class CrawlerDataWebsite {
     public Document doc;
     protected String url;
     public List<DSChiSo> dschiso = new ArrayList<>();
@@ -27,7 +27,7 @@ public abstract class CrawlerDaTaWebsite {
 //        url = "https://s.cafef.vn/Lich-su-giao-dich-VNINDEX-1.chn";
 //    }
 //    
-    public CrawlerDaTaWebsite(String url)
+    public CrawlerDataWebsite(String url)
     {
         // Dung khi chuyen page tu 1 sang 2 thoi nha!
         this.url = url;

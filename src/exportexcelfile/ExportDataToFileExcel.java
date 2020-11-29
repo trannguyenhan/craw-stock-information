@@ -20,21 +20,21 @@ import crawlerdatawebsite.*;
  *
  * @author admin
  */
-public class ExportDaTaToFileExcel {
-    CrawlerDaTaVNINDEX crawVNINDEX;
-    CrawlerDaTaUPCOMINDEX crawUPCOMINDEX;
-    CrawlerDaTaHNXINDEX crawHNXINDEX;
+public class ExportDataToFileExcel {
+    CrawlerDataVNINDEX crawVNINDEX;
+    CrawlerDataUPCOMINDEX crawUPCOMINDEX;
+    CrawlerDataHNXINDEX crawHNXINDEX;
     
     XSSFWorkbook wb = new XSSFWorkbook();
     
-    public ExportDaTaToFileExcel()
+    public ExportDataToFileExcel()
     {
-        crawVNINDEX = new CrawlerDaTaVNINDEX("https://s.cafef.vn/Lich-su-giao-dich-VNINDEX-1.chn");
-        crawUPCOMINDEX = new CrawlerDaTaUPCOMINDEX("https://s.cafef.vn/Lich-su-giao-dich-UPCOM-INDEX-1.chn");
-        crawHNXINDEX = new CrawlerDaTaHNXINDEX("https://s.cafef.vn/Lich-su-giao-dich-HNX-INDEX-1.chn");
+        crawVNINDEX = new CrawlerDataVNINDEX("https://s.cafef.vn/Lich-su-giao-dich-VNINDEX-1.chn");
+        crawUPCOMINDEX = new CrawlerDataUPCOMINDEX("https://s.cafef.vn/Lich-su-giao-dich-UPCOM-INDEX-1.chn");
+        crawHNXINDEX = new CrawlerDataHNXINDEX("https://s.cafef.vn/Lich-su-giao-dich-HNX-INDEX-1.chn");
     }
     
-    public void exportDaTaVNINDEX() throws IOException
+    public void exportDataVNINDEX() throws IOException
     {
         crawVNINDEX.getDocumentFromURL();
         
@@ -120,7 +120,7 @@ public class ExportDaTaToFileExcel {
 //        wb.write(fileoutput);
     }
      
-    public void exportDaTaUPCOMINDEX() throws IOException
+    public void exportDataUPCOMINDEX() throws IOException
     {
         crawUPCOMINDEX.getDocumentFromURL();
         
@@ -203,7 +203,7 @@ public class ExportDaTaToFileExcel {
         
     }
     
-    public void exportDaTaHNXINDEX() throws IOException
+    public void exportDataHNXINDEX() throws IOException
     {
         crawHNXINDEX.getDocumentFromURL();
         
@@ -288,7 +288,7 @@ public class ExportDaTaToFileExcel {
     
     public void export() throws FileNotFoundException, IOException
     {
-        File file = new File("E:\\[JAVA]NetBeans\\CrawlerDaTaWebsite\\excel.xlsx");
+        File file = new File("result/excel.xlsx");
         FileOutputStream fileoutput = new FileOutputStream(file);
         wb.write(fileoutput);
     }

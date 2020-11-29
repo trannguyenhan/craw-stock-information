@@ -5,7 +5,7 @@
  */
 package mainframe;
 
-import crawlerdatawebsite.CrawlerDaTaHOSE;
+import crawlerdatawebsite.CrawlerDataHOSE;
 import java.io.IOException;
 import exportexcelfile.*;
 /**
@@ -14,14 +14,14 @@ import exportexcelfile.*;
  */
 public class mainFrame {
     public static void main(String[] args) throws IOException {
-        ExportStockDaTaToFileExcel export1 = new ExportStockDaTaToFileExcel();
+        ExportStockDataToFileExcel export1 = new ExportStockDataToFileExcel();
         export1.exportDaTaHOSE();
         export1.export();
         
-        ExportDaTaToFileExcel export2 = new ExportDaTaToFileExcel();
-        export2.exportDaTaVNINDEX();
-        export2.exportDaTaUPCOMINDEX();
-        export2.exportDaTaHNXINDEX();
+        ExportDataToFileExcel export2 = new ExportDataToFileExcel();
+        export2.exportDataVNINDEX();
+        export2.exportDataUPCOMINDEX();
+        export2.exportDataHNXINDEX();
         export2.export();
     }
 }

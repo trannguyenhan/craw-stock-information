@@ -17,9 +17,9 @@ import org.jsoup.select.Elements;
  *
  * @author admin
  */
-public class CrawlerDaTaVNINDEX extends CrawlerDaTaWebsite{
+public class CrawlerDataVNINDEX extends CrawlerDataWebsite{
     
-    public CrawlerDaTaVNINDEX(String url)
+    public CrawlerDataVNINDEX(String url)
     {
         super(url);
     }

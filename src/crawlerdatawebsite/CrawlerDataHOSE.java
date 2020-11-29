@@ -13,9 +13,9 @@ import org.jsoup.nodes.Element;
  *
  * @author admin
  */
-public class CrawlerDaTaHOSE extends CrawlerDaTaWebsite{
+public class CrawlerDataHOSE extends CrawlerDataWebsite{
 
-    public CrawlerDaTaHOSE(String url)
+    public CrawlerDataHOSE(String url)
     {
         super(url);
     }
