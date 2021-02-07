@@ -1,9 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package exportexcelfile;
+package export;
 
 import java.io.IOException;
 import org.apache.poi.ss.usermodel.CellType;
@@ -20,7 +15,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  *
  * @author admin
  */
-public class ExportStockDataToFileExcel {
+public class ExportDataStockData {
     CrawlerDataHOSE crawHOSE = new CrawlerDataHOSE("https://s.cafef.vn/TraCuuLichSu2/1/HOSE/03/06/2020.chn");
     XSSFWorkbook wb = new XSSFWorkbook();
     
@@ -31,7 +26,7 @@ public class ExportStockDataToFileExcel {
         XSSFSheet sheet = wb.createSheet("UPCOM-INDEX");
         
         int rownum = 0;
-        int maxrownum = crawHOSE.dSChiSoStockCode.size();
+        int maxrownum = crawHOSE.dayTradingStockCode.size();
         
         XSSFRow row;
         XSSFCell cell;
@@ -77,37 +72,37 @@ public class ExportStockDataToFileExcel {
         {
             row = sheet.createRow(rownum);
             cell = row.createCell(0,CellType.STRING);
-            cell.setCellValue(crawHOSE.dSChiSoStockCode.get(rownum-1).getStockCode());
+            cell.setCellValue(crawHOSE.dayTradingStockCode.get(rownum-1).getStockCode());
 
             cell = row.createCell(1,CellType.STRING);
-            cell.setCellValue(crawHOSE.dSChiSoStockCode.get(rownum-1).getFinalPrice());
+            cell.setCellValue(crawHOSE.dayTradingStockCode.get(rownum-1).getFinalPrice());
 
             cell = row.createCell(2,CellType.STRING);
-            cell.setCellValue(crawHOSE.dSChiSoStockCode.get(rownum-1).getChange());
+            cell.setCellValue(crawHOSE.dayTradingStockCode.get(rownum-1).getChange());
 
             cell = row.createCell(3,CellType.STRING);
-            cell.setCellValue(crawHOSE.dSChiSoStockCode.get(rownum-1).getReferencePrice());
+            cell.setCellValue(crawHOSE.dayTradingStockCode.get(rownum-1).getReferencePrice());
 
             cell = row.createCell(4,CellType.STRING);
-            cell.setCellValue(crawHOSE.dSChiSoStockCode.get(rownum-1).getOpenPrice());
+            cell.setCellValue(crawHOSE.dayTradingStockCode.get(rownum-1).getOpenPrice());
 
             cell = row.createCell(5,CellType.STRING);
-            cell.setCellValue(crawHOSE.dSChiSoStockCode.get(rownum-1).getMaxPrice());
+            cell.setCellValue(crawHOSE.dayTradingStockCode.get(rownum-1).getMaxPrice());
 
             cell = row.createCell(6,CellType.STRING);
-            cell.setCellValue(crawHOSE.dSChiSoStockCode.get(rownum-1).getMinPrice());
+            cell.setCellValue(crawHOSE.dayTradingStockCode.get(rownum-1).getMinPrice());
 
             cell = row.createCell(7,CellType.STRING);
-            cell.setCellValue(crawHOSE.dSChiSoStockCode.get(rownum-1).getGt_Auction());
+            cell.setCellValue(crawHOSE.dayTradingStockCode.get(rownum-1).getGt_Auction());
 
             cell = row.createCell(8,CellType.STRING);
-            cell.setCellValue(crawHOSE.dSChiSoStockCode.get(rownum-1).getKl_Auction());
+            cell.setCellValue(crawHOSE.dayTradingStockCode.get(rownum-1).getKl_Auction());
 
             cell = row.createCell(9,CellType.STRING);
-            cell.setCellValue(crawHOSE.dSChiSoStockCode.get(rownum-1).getKl_Deal());
+            cell.setCellValue(crawHOSE.dayTradingStockCode.get(rownum-1).getKl_Deal());
             
             cell = row.createCell(10,CellType.STRING);
-            cell.setCellValue(crawHOSE.dSChiSoStockCode.get(rownum-1).getGt_Deal());
+            cell.setCellValue(crawHOSE.dayTradingStockCode.get(rownum-1).getGt_Deal());
             rownum++;
         }
     }

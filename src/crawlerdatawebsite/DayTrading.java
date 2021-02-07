@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package crawlerdatawebsite;
 
 import java.util.ArrayList;
@@ -12,7 +7,7 @@ import java.util.List;
  *
  * @author admin
  */
-public class DSChiSo {
+public class DayTrading {
     private String date;
     private String finalPrice;
     private String change;
@@ -25,20 +20,18 @@ public class DSChiSo {
     private String minPrice;
     private int inc;
     private int dec;
-    private String stock;
-    private String value;
     private List<String> stock_name = new ArrayList<>();
     private List<String> stock_price = new ArrayList<>();
     private List<String> stock_weight = new ArrayList<>();
     private List<String> company_name = new ArrayList<>();
     private List<String> change_percentage = new ArrayList<>();
     
-    public DSChiSo()
+    public DayTrading()
     {
         this("00/00/00","0","0","0","0","0","0","0","0","0");
     }
     
-    public DSChiSo(List<String> stock_name, List<String> company_name, List<String> stock_price,  List<String> change_percentage, List<String> stock_weight)
+    public DayTrading(List<String> stock_name, List<String> company_name, List<String> stock_price,  List<String> change_percentage, List<String> stock_weight)
     {
         this.stock_name = stock_name;
         this.company_name = company_name;
@@ -47,12 +40,12 @@ public class DSChiSo {
         this.stock_weight = stock_weight;
     }
 
-    public DSChiSo(int inc, int dec){//bao nhieu ma tang giam
+    public DayTrading(int inc, int dec){
         this.inc = inc;
         this.dec = dec;
     }
     
-    public DSChiSo(String date, String finalPrice, String change, String KL_auction, String GT_auction, String KL_deal, String GT_deal, String openPrice, String maxPrice, String minPrice) {
+    public DayTrading(String date, String finalPrice, String change, String KL_auction, String GT_auction, String KL_deal, String GT_deal, String openPrice, String maxPrice, String minPrice) {
         this.date = date;
         this.finalPrice = finalPrice;
         this.change = change;
@@ -117,16 +110,14 @@ public class DSChiSo {
     
     public String getChange()
     {
-        // Hien tai change dang o dinh dang (vi du) 8.9 (1.14%) -> can thay doi thanh : 8.9 diem (1.14 %)
+        // example : 8.9 (1.14%) -> 8.9 diem (1.14 %)
         int i;
         for(i=0; i<change.length(); i++)
             if(change.charAt(i) == '(') break;
         
-        // Tach ra thanh 2 String 
         String temp1 = change.substring(0, i-1);
         String temp2 = change.substring(i,change.length());
         
-        // Gop lai temp1 + " diem " + temp2
         String temp = temp1 + " điểm " + temp2;
         
         return temp;

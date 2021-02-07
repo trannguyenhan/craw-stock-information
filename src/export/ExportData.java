@@ -1,15 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package exportexcelfile;
+package export;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import static javax.management.openmbean.SimpleType.STRING;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -20,14 +14,14 @@ import crawlerdatawebsite.*;
  *
  * @author admin
  */
-public class ExportDataToFileExcel {
+public class ExportData {
     CrawlerDataVNINDEX crawVNINDEX;
     CrawlerDataUPCOMINDEX crawUPCOMINDEX;
     CrawlerDataHNXINDEX crawHNXINDEX;
     
     XSSFWorkbook wb = new XSSFWorkbook();
     
-    public ExportDataToFileExcel()
+    public ExportData()
     {
         crawVNINDEX = new CrawlerDataVNINDEX("https://s.cafef.vn/Lich-su-giao-dich-VNINDEX-1.chn");
         crawUPCOMINDEX = new CrawlerDataUPCOMINDEX("https://s.cafef.vn/Lich-su-giao-dich-UPCOM-INDEX-1.chn");

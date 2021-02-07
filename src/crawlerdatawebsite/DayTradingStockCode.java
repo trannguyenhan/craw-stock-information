@@ -9,7 +9,7 @@ package crawlerdatawebsite;
  *
  * @author Admin
  */
-public class DSChiSoStockCode {
+public class DayTradingStockCode {
     private String stockCode;
     private String finalPrice;
     private String change;
@@ -24,16 +24,16 @@ public class DSChiSoStockCode {
     private int inc;
     private int dec;
     
-    public DSChiSoStockCode() {
+    public DayTradingStockCode() {
         this("0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
     }
     
-    public DSChiSoStockCode(int inc, int dec){//bao nhieu ma tang giam
+    public DayTradingStockCode(int inc, int dec){//bao nhieu ma tang giam
         this.inc = inc;
         this.dec = dec;
     }
     
-    public DSChiSoStockCode(String stockCode, String finalPrice, String change, String referencePrice, String openPrice, String maxPrice, String minPrice, String gt_Auction, String kl_Auction, String kl_Deal, String gt_Deal) {
+    public DayTradingStockCode(String stockCode, String finalPrice, String change, String referencePrice, String openPrice, String maxPrice, String minPrice, String gt_Auction, String kl_Auction, String kl_Deal, String gt_Deal) {
         this.stockCode = stockCode;
         this.finalPrice = finalPrice;
         this.change = change;
